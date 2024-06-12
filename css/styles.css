@@ -13346,4 +13346,22 @@ textarea.form-control-lg {
 }
 .row {
   background-image: url("https://thumbs.dreamstime.com/b/un-grupo-de-gente-diversa-sonriendo-y-riendo-juntos-comedia-broma-ai-generativo-271227169.jpg");
+}
+
+.btn1 {
+  border: none;
+  background-color: white;
+  font-size: 25px;
+}
+
+.btn2 {
+  border: none;
+  background-color: white;
+  font-size: 25px;
+}
+
+.btn3 {
+  border: none;
+  background-color: white;
+  font-size: 25px;
 }/*# sourceMappingURL=styles.css.map */

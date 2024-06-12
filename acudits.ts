@@ -1,9 +1,9 @@
 
-const button = document.querySelector("button")
-const cardText = document.querySelector(".card-text")
+const button: HTMLButtonElement | null = document.querySelector("button")
+const cardText: HTMLParagraphElement | null = document.querySelector(".card-text")
 
+const reportJokes: Object[] = []
 
-// Definimos la interfaz para el tipo de datos de la broma
 interface JokeData {
     joke: string;
 }
@@ -20,8 +20,10 @@ function traerJoke() : void {
     fetch("https://icanhazdadjoke.com/", options)
         .then((res) => res.json())
         .then(data => {
-            console.log(data)
-            crearJoke(data)
+            mostrarJoke(data)
+            capturarJoke(data)
+            capturarIsoDate()
+
         }
     ) 
     .catch((error) => {
@@ -31,21 +33,23 @@ function traerJoke() : void {
 
 
 // Función para crear y añadir una broma al contenedor
-function crearJoke(data: JokeData): void {
+function mostrarJoke(data: JokeData): void {
     //validacion cardText por si es null o undefined
     if (!cardText) {
-        console.error("card text se encuentra.");
+        console.error("card text no se encuentra.");
         return;
     }
 
     let p: HTMLParagraphElement | null = cardText.querySelector("p");
 
-    // Si el elemento <p> no existe, lo creamos
+    // Si el elemento <p> no existe, lo creamos 
     if (!p) {
         p = document.createElement("p");
         cardText.appendChild(p);
         p.textContent = data.joke;
+        return;
 
+    
     }else {
         p.textContent = data.joke;
     }
@@ -54,7 +58,26 @@ function crearJoke(data: JokeData): void {
 
 traerJoke()
 
-//añadir un evento al botón para traer una nueva broma al hacer clic
+//botón para traer una nueva broma al hacer clic
 button?.addEventListener("click", traerJoke);
 
+// botones para function asignar score
+// document.getElementById("btn").addEventListener("click", traerJoke): 
+// document.getElementById("btn1").addEventListener("click", capturarDatos)
+// document.getElementById("btn2").addEventListener("click", capturarDatos)
+// document.getElementById("btn3").addEventListener("click", capturarDatos)
+
+
+
+function capturarJoke(data: JokeData): void {
+    reportJokes.push(data.joke)
+    console.log(reportJokes)
+}
+
+function capturarIsoDate(){
+    const isoDate = new Date().toISOString();
+    console.log(isoDate)
+    reportJokes.push(isoDate)
+    console.log(reportJokes)
+}
 
