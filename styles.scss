@@ -1,6 +1,6 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
-.row {
+#rowJoke {
     background-image: url('https://thumbs.dreamstime.com/b/un-grupo-de-gente-diversa-sonriendo-y-riendo-juntos-comedia-broma-ai-generativo-271227169.jpg');
 }
 
@@ -13,7 +13,6 @@
 .btn2{
     border:none;
     background-color: white;
-
     font-size: 25px;
 }
 
@@ -21,6 +20,10 @@
     border:none;
     background-color: white;
     font-size: 25px;
+}
+
+#weatherRow{
+    background-color: rgba(28, 193, 223, 0.466);
 }
 
 
