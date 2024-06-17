@@ -122,10 +122,7 @@ function randomApi(){
 }
 
 
-
-
 //API TIEMPO
-
 interface WeatherData {
     name: string;
     main: {
@@ -184,7 +181,6 @@ function mostrarTiempo(dataTiempo: WeatherData): void {
     const wind = document.createElement("p")
     wind.textContent = "wind:" +" "+ dataTiempo.wind.speed + "m/s" 
     resultsContainer?.append(wind)
-
 }
 
 
