@@ -13345,7 +13345,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-color: rgba(184, 15, 57, 0.521);
+  background-color: rgba(87, 15, 83, 0.521);
 }
 
 #rowWeather {
@@ -13376,7 +13376,6 @@ body {
       -ms-flex-pack: start;
           justify-content: start;
   font-size: 30px;
-  margin-top: 20px;
 }
 
 .blob1 {
@@ -13449,7 +13448,7 @@ body {
     margin-left: 30%;
   }
   #weatherIcon-container {
-    width: 150%;
+    width: 160%;
   }
   #temp-results {
     margin-bottom: 7px;
