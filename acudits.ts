@@ -76,9 +76,9 @@ getApiDadJoke()
 // funcion para capturar y agregar al array "reportJokes" los datos de la broma actual. ScoreActual por defecto es null ya que es opcional que el usuario lo indique
 function capturarDatosJoke(data: JokeData): void {
     let jokeActual =""
-    if (data.joke){
+    if (data.joke) {
         jokeActual = data.joke 
-    }else if(data.value){
+    }else if(data.value) {
         jokeActual = data.value
     }
     let isoDateActual = new Date().toISOString();
@@ -112,7 +112,7 @@ function getApiChuckNorris() : void {
 }
 
 // funcion para escojer la API del siguiente chiste a mostrar ( numeros aleatorios : pares = dadJOkes impares= ChuckNorris)
-function randomApi(){
+function randomApi() {
     let numRandom = Math.floor(Math.random() * 100);
     if(numRandom % 2 == 0){
         getApiDadJoke()

@@ -1,27 +1,27 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 
-body{
+body {
     background-color: rgba(87, 15, 83, 0.521);
 }
 
-#rowWeather{
+#rowWeather {
     display: flex;
     height: 150px;
     align-items: center;
 
-    #icon-results{
+    #icon-results {
 
-        img{
+        img {
             justify-content: end;
             width: 120%;
         }
     }
 
-    #temp-results{
+    #temp-results {
         display: flex;
 
-        h5{
+        h5 {
             display: flex;
             justify-content: start;
             font-size: 30px;  
@@ -29,7 +29,7 @@ body{
     }    
 }
 
-.blob1{
+.blob1 {
     display: flex;
     align-self: flex-start;
     justify-content: center;
@@ -45,7 +45,7 @@ body{
     display: flex;
     justify-content: center;
 
-    .card{
+    .card {
         display: flex;
         width: 23rem;
         justify-content: center;
@@ -53,15 +53,15 @@ body{
         border-color: transparent;
         align-self: center;
 
-        h5{
+        h5 {
             color: white;
         }
     
-        p{
+        p {
             color: white;
         }
     
-        .btn1{
+        .btn1 {
             border:none;
             background-color: transparent;
             font-size: 25px;
@@ -73,7 +73,7 @@ body{
             }
 
         
-        .btn2{
+        .btn2 {
             border:none;
             background-color: transparent;
             font-size: 25px;
@@ -85,7 +85,7 @@ body{
             }
 
         
-        .btn3{
+        .btn3 {
             border:none;
             background-color: transparent;
             font-size: 25px;
@@ -108,7 +108,7 @@ body{
             transition: 0.5s;
             border:none;
             color: white;
-            }
+        }
             
     } 
 }
@@ -119,19 +119,19 @@ body{
 
 @media all and (max-width: 425px) {
 
-    #icon-results{
+    #icon-results {
         margin-left: 30%;
     }
 
-    #weatherIcon-container{
+    #weatherIcon-container {
         width: 160%;
     }
 
-    #temp-results{
+    #temp-results {
        margin-bottom: 7px;
     }
 
-    .blob1{
+    .blob1 {
         margin-top: 35px;
     }
 }
@@ -142,11 +142,11 @@ body{
 
 @media all and (max-width: 1024px) {
 
-    #icon-results{
+    #icon-results {
         width: 15%;
     } 
 
-    .blob1{
+    .blob1 {
         margin-top: 35px;
     }
 
