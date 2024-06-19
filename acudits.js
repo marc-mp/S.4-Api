@@ -91,7 +91,7 @@ function capturarDatosJoke(data) {
     if (data.joke) {
         jokeActual = data.joke;
     }
-    else {
+    else if (data.value) {
         jokeActual = data.value;
     }
     var isoDateActual = new Date().toISOString();
@@ -157,23 +157,27 @@ function getApiTiempo() {
 getApiTiempo();
 // Función para mostrar datos de la API openWeather
 function mostrarTiempo(dataTiempo) {
-    var resultsContainer = document.querySelector("#weather-results");
-    var city = document.createElement("h2");
-    city.textContent = dataTiempo.name;
-    resultsContainer === null || resultsContainer === void 0 ? void 0 : resultsContainer.append(city);
+    var tempContainer = document.querySelector("#temp-container");
     var temp = document.createElement("h5");
-    temp.textContent = dataTiempo.main.temp + "ºF";
-    resultsContainer === null || resultsContainer === void 0 ? void 0 : resultsContainer.append(temp);
+    var tempKelvin = dataTiempo.main.temp;
+    console.log(tempKelvin);
+    var tempCelsius = tempKelvin - 273.15;
+    temp.textContent = tempCelsius.toFixed(0) + "ºC";
+    tempContainer === null || tempContainer === void 0 ? void 0 : tempContainer.append(temp);
+    var iconContainer = document.querySelector("#weatherIcon-container");
     var weatherDetails = dataTiempo.weather[0];
-    var description = document.createElement("p");
-    description.textContent = weatherDetails.description;
-    resultsContainer === null || resultsContainer === void 0 ? void 0 : resultsContainer.append(description);
     var iconCode = weatherDetails.icon;
     var urlIcon = "https://openweathermap.org/img/wn/".concat(iconCode, ".png");
-    var image = document.createElement("img");
-    image.src = urlIcon;
-    resultsContainer === null || resultsContainer === void 0 ? void 0 : resultsContainer.append(image);
-    var wind = document.createElement("p");
-    wind.textContent = "wind:" + " " + dataTiempo.wind.speed + "m/s";
-    resultsContainer === null || resultsContainer === void 0 ? void 0 : resultsContainer.append(wind);
+    var imageIcon = document.createElement("img");
+    imageIcon.src = urlIcon;
+    iconContainer === null || iconContainer === void 0 ? void 0 : iconContainer.append(imageIcon);
+    // let city = document.createElement("h2")
+    // city.textContent = dataTiempo.name
+    // resultsContainer?.append(city)
+    // let description = document.createElement("p")
+    // description.textContent = weatherDetails.description
+    // resultsContainer?.append(description)
+    // const wind = document.createElement("p")
+    // wind.textContent = "wind:" +" "+ dataTiempo.wind.speed + "m/s" 
+    // resultsContainer?.append(wind)
 }

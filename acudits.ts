@@ -78,7 +78,7 @@ function capturarDatosJoke(data: JokeData): void {
     let jokeActual =""
     if (data.joke){
         jokeActual = data.joke 
-    }else{
+    }else if(data.value){
         jokeActual = data.value
     }
     let isoDateActual = new Date().toISOString();
@@ -103,7 +103,6 @@ function getApiChuckNorris() : void {
             mostrarApiJoke(data)
             capturarDatosJoke(data)
             console.log(reportJokes)
-
         }
     ) 
     .catch((error) => {
@@ -140,7 +139,7 @@ interface WeatherData {
 
 
 // Función para traer datos de la API openWeather
-async function getApiTiempo(): Promise<void> {
+async function getApiTiempo(): Promise <void> {
     try {
         const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=f81f5b7cafe98a091b11b0ef311fed77");
         const dataTiempo = await response.json()
@@ -156,31 +155,39 @@ getApiTiempo()
 
 // Función para mostrar datos de la API openWeather
 function mostrarTiempo(dataTiempo: WeatherData): void {
-    let resultsContainer = document.querySelector("#weather-results")
-
-    let city = document.createElement("h2")
-    city.textContent = dataTiempo.name
-    resultsContainer?.append(city)
+    let tempContainer = document.querySelector("#temp-container")
 
     let temp = document.createElement("h5")
-    temp.textContent = dataTiempo.main.temp + "ºF"
-    resultsContainer?.append(temp)
+    let tempKelvin = dataTiempo.main.temp
+    console.log(tempKelvin)
+    let tempCelsius = tempKelvin - 273.15
+    temp.textContent = tempCelsius.toFixed(0) + "ºC" 
+    tempContainer?.append(temp)
+
+    let iconContainer = document.querySelector("#weatherIcon-container")
+
 
     let weatherDetails = dataTiempo.weather[0]
 
-    let description = document.createElement("p")
-    description.textContent = weatherDetails.description
-    resultsContainer?.append(description)
-
     let iconCode = weatherDetails.icon
     const urlIcon = `https://openweathermap.org/img/wn/${iconCode}.png`
-    let image = document.createElement("img")
-    image.src = urlIcon
-    resultsContainer?.append(image)
+    let imageIcon = document.createElement("img")
+    imageIcon.src = urlIcon
+    iconContainer?.append(imageIcon)
+
     
-    const wind = document.createElement("p")
-    wind.textContent = "wind:" +" "+ dataTiempo.wind.speed + "m/s" 
-    resultsContainer?.append(wind)
+    // let city = document.createElement("h2")
+    // city.textContent = dataTiempo.name
+    // resultsContainer?.append(city)
+
+    // let description = document.createElement("p")
+    // description.textContent = weatherDetails.description
+    // resultsContainer?.append(description)
+
+
+    // const wind = document.createElement("p")
+    // wind.textContent = "wind:" +" "+ dataTiempo.wind.speed + "m/s" 
+    // resultsContainer?.append(wind)
 }
 
 

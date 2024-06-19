@@ -13344,28 +13344,126 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-#rowJoke {
-  background-image: url("https://thumbs.dreamstime.com/b/un-grupo-de-gente-diversa-sonriendo-y-riendo-juntos-comedia-broma-ai-generativo-271227169.jpg");
+body {
+  background-color: rgba(184, 15, 57, 0.521);
 }
 
-.btn1 {
+#rowWeather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#rowWeather #icon-results img {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  width: 120%;
+}
+#rowWeather #temp-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#rowWeather #temp-results h5, #rowWeather #temp-results .h5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.blob1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  right: 1%;
+  left: 0.5%;
+  width: 100%;
+  height: 100%;
+}
+
+#card-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#card-col .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 23rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+  border-color: transparent;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+#card-col .card h5, #card-col .card .h5 {
+  color: white;
+}
+#card-col .card p {
+  color: white;
+}
+#card-col .card .btn1 {
   border: none;
-  background-color: white;
+  background-color: transparent;
   font-size: 25px;
 }
-
-.btn2 {
+#card-col .card .btn2 {
   border: none;
-  background-color: white;
+  background-color: transparent;
   font-size: 25px;
 }
-
-.btn3 {
+#card-col .card .btn3 {
   border: none;
-  background-color: white;
+  background-color: transparent;
   font-size: 25px;
 }
+#card-col .card .btn {
+  border-color: black;
+  border-width: 2px;
+  font-weight: 500;
+}
 
-#weatherRow {
-  background-color: rgba(28, 193, 223, 0.466);
+/* VERSIO MOBIL */
+@media all and (max-width: 425px) {
+  #icon-results {
+    margin-left: 30%;
+  }
+  #weatherIcon-container {
+    width: 150%;
+  }
+  #temp-results {
+    margin-bottom: 7px;
+  }
+  .blob1 {
+    margin-top: 35px;
+  }
+}
+/* VERSIO TABLET */
+@media all and (max-width: 1024px) {
+  #icon-results {
+    width: 15%;
+  }
+  .blob1 {
+    margin-top: 35px;
+  }
 }/*# sourceMappingURL=styles.css.map */
