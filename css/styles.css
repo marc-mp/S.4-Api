@@ -13426,20 +13426,46 @@ body {
   background-color: transparent;
   font-size: 25px;
 }
+#card-col .card .btn1:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 #card-col .card .btn2 {
   border: none;
   background-color: transparent;
   font-size: 25px;
+}
+#card-col .card .btn2:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 #card-col .card .btn3 {
   border: none;
   background-color: transparent;
   font-size: 25px;
 }
+#card-col .card .btn3:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 #card-col .card .btn {
   border-color: black;
   border-width: 2px;
   font-weight: 500;
+}
+#card-col .card .btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: none;
+  color: white;
 }
 
 /* VERSIO MOBIL */

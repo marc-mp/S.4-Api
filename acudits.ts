@@ -105,13 +105,13 @@ function getApiChuckNorris() : void {
             console.log(reportJokes)
         }
     ) 
-    
+
     .catch((error) => {
         console.error("Error fetching chuckNorrisjoke:", error);
     });
 }
 
-// funcion para escojer la API del siguiente chiste a mostrar
+// funcion para escojer la API del siguiente chiste a mostrar ( numeros aleatorios : pares = dadJOkes impares= ChuckNorris)
 function randomApi(){
     let numRandom = Math.floor(Math.random() * 100);
     if(numRandom % 2 == 0){
